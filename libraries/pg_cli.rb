@@ -39,6 +39,7 @@ class Chef
       args << "--username=#{options[:admin_username]}" if options[:admin_username]
       args << "--dbname=#{options[:dbname]}" if options[:dbname]
       args << "--no-psqlrc"
+      args << "--set=ON_ERROR_STOP=1"
       args << "--file=#{command_file}"
 
       prefix = options[:admin_password] ? "PGPASSWORD=#{escape(options[:admin_password])} ": ''
